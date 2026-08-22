@@ -40,12 +40,39 @@ var groqSettings = new GroqSettings
 if (string.IsNullOrWhiteSpace(groqSettings.ApiKey))
     throw new InvalidOperationException("GROQ_API_KEY is not set. Provide it via the GROQ_API_KEY environment variable.");
 
-var conn = NormalizeConnectionString(
-    Environment.GetEnvironmentVariable("DATABASE_URL"),
-    builder.Configuration.GetConnectionString("Default"));
+var rawDatabaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+var rawConnectionDefault = builder.Configuration.GetConnectionString("Default");
+var conn = NormalizeConnectionString(rawDatabaseUrl, rawConnectionDefault);
 if (string.IsNullOrWhiteSpace(conn))
-    throw new InvalidOperationException("DATABASE_URL is not set and ConnectionStrings:Default is empty.");
+{
+    var seen = (rawDatabaseUrl, rawConnectionDefault) switch
+    {
+        (null or "", null or "") => "neither DATABASE_URL nor ConnectionStrings:Default was set",
+        (null or "", _)          => "DATABASE_URL was empty and ConnectionStrings:Default was empty",
+        (_, null or "")          => "DATABASE_URL was set but parsed to an empty connection string",
+        _                        => "both DATABASE_URL and ConnectionStrings:Default were empty after normalization"
+    };
+    throw new InvalidOperationException(
+        "PostgreSQL connection is not configured. Set the DATABASE_URL environment variable " +
+        "(postgres://USER:PASSWORD@HOST/DB?sslmode=require) on the host (e.g. Render). " +
+        $"Detected: {seen}.");
+}
+
+var connHostLog = SafeHostForLog(conn);
+Console.WriteLine($"[startup] PostgreSQL host resolved to: {connHostLog}");
+
 builder.Services.AddDbContext<AppDbContext>(opt => opt.UseNpgsql(conn));
+
+static string SafeHostForLog(string npsqlConn)
+{
+    foreach (var part in npsqlConn.Split(';', StringSplitOptions.RemoveEmptyEntries))
+    {
+        var kv = part.Split('=', 2);
+        if (kv.Length == 2 && kv[0].Trim().Equals("Host", StringComparison.OrdinalIgnoreCase))
+            return kv[1].Trim();
+    }
+    return "(unknown)";
+}
 
 static string? NormalizeConnectionString(string? urlOrConn, string? connStr)
 {

@@ -1,0 +1,1 @@
+SELECT id, user_id, name, created_at FROM businesses WHERE user_id = '0773837a-a49f-437f-b122-8c7a727e56d4';

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="FinoraTwin.Api/FinoraTwin.Api.csproj" />
+  <Project Path="FinoraTwin.Domain/FinoraTwin.Domain.csproj" />
+  <Project Path="FinoraTwin.Infrastructure/FinoraTwin.Infrastructure.csproj" />
+  <Project Path="FinoraTwin.Tests/FinoraTwin.Tests.csproj" />
+</Solution>

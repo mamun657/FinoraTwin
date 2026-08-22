@@ -1,0 +1,161 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Generated Android UI inspection artifacts (UIAutomator dumps)
+/ui_*.xml
+/ui_*.txt
+/ui_*.png
+/ui_e2e_*.xml
+/ui_e2e_*.txt
+/ui_e2e_*.png
+/ui_e2e_*.jpg
+/ui_after_*.xml
+/ui_after_*.txt
+/u[0-9]*.xml
+/u[0-9]*.png
+/screen_*.xml
+/screen_*.png
+/dump*.xml
+/raw*.bin
+/secure*.xml
+/dlg.xml
+/dump_login.xml
+
+# Local E2E / UI test snapshots at repo root
+/now*.png
+/now*.jpg
+/dash*.png
+/dash*.jpg
+/cap_now.png
+/snap*.png
+/snap*.jpg
+/cur.png
+/state.png
+/xc.png
+/ai.png
+/profile.png
+/dashboard_*.png
+/icons_dash.png
+/uitmp*.png
+/after_signout.png
+/s1.png
+/s1.jpg
+/ui3.xml
+
+# E2E auth/inspection text artifacts
+/access.token
+/refresh.token
+/register.json
+/login.json
+/login_resp.json
+/admin_login.json
+/_login.json
+/_login_resp.json
+/_put.json
+/_req.json
+/swagger.json
+/swagger.json.tmp
+/reg.json
+
+# E2E inspection extracted text/log dumps
+/focus.txt
+/admin_analyze*.txt
+/admin_users*.txt
+/analyze_*.txt
+/ai_copilot_new.txt
+/capital_input_new.txt
+/capital_result_new.txt
+/financial_health_new.txt
+/profile_new.txt
+/settings_new.txt
+/test_biz.txt
+/test_creds.txt
+/test_email.txt
+/test_token.txt
+
+# Log captures
+/api.err.log
+/api.out.log
+/apk_build.log
+/flutter_build.log
+/logcat_run.log
+/analyze.log
+
+# Local inspection PowerShell / Python helpers
+/convert.py
+/_raw2png.py
+/_show_ui.py
+/_admin_login.ps1
+/_dump_ui.ps1
+/_parse_ui.ps1
+/_parse_ui_content.ps1
+/_put_biz.ps1
+/do_login.ps1
+/do_login_v2.ps1
+/do_login_v3.ps1
+/dump_buttons.ps1
+/dump_descs.ps1
+/dump_inputs.ps1
+/dump_tiles.ps1
+/dump13.ps1
+/dump14.ps1
+/dump15.ps1
+/find_icon_y.ps1
+/probe_biz.ps1
+/sample_activity.ps1
+/sample_icons.ps1
+/analyze_icons.ps1
+/analyze_users.ps1
+/analyze_users2.ps1
+/write_ai.ps1
+/write_cap_in.ps1
+/write_cap_out.ps1
+/write_health.ps1
+/write_profile_settings.ps1
+
+# Local dev scratch files
+/.start_flutter.cmd
+/.termtest.txt

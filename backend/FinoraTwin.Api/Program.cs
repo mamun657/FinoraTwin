@@ -199,6 +199,28 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+var skipAutoMigrate = string.Equals(
+    Environment.GetEnvironmentVariable("EF_SKIP_MIGRATE"), "1",
+    StringComparison.Ordinal);
+
+if (!app.Environment.IsDevelopment() && !skipAutoMigrate)
+{
+    using var migrateScope = app.Services.CreateScope();
+    var db = migrateScope.ServiceProvider.GetRequiredService<AppDbContext>();
+    var startupLogger = app.Services.GetRequiredService<ILoggerFactory>().CreateLogger("Startup");
+    try
+    {
+        startupLogger.LogInformation("Applying EF Core migrations to the production database...");
+        db.Database.Migrate();
+        startupLogger.LogInformation("EF Core migrations applied successfully.");
+    }
+    catch (Exception ex)
+    {
+        startupLogger.LogError(ex, "Failed to apply EF Core migrations at startup.");
+        throw;
+    }
+}
+
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())

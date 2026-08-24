@@ -143,19 +143,31 @@ The proposed solution consists of several connected layers:
 
 ## 🔐 Authentication
 
-FinoraTwin provides protected user access through an authentication system.
+Secure user access with registration and login flows connected to the Flutter app and backend API.
 
-Core authentication functionality includes:
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/9a2012ca-7432-408e-89d1-0cce7647fe4a" width="240" alt="Sign In"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/b55584b5-f3f8-42ba-ba53-2d312e96e0be" width="240" alt="Create Account"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>Sign In</b></td>
+      <td align="center"><b>Create Account</b></td>
+    </tr>
+  </table>
+</div>
 
-* User registration
-* User login
-* Password-based authentication
-* Access control
-* Protected application routes
-* Refresh token support
-* Session persistence
+**Includes:**
 
-Authentication is integrated between the Flutter application and backend API.
+* User registration and login
+* Password authentication
+* Protected routes and access control
+* Session and refresh token support
 
 ---
 
@@ -175,91 +187,106 @@ The business context allows financial information and analysis to be associated 
 
 ---
 
-# 📊 Financial Dashboard
+## 📊 Financial Dashboard
 
-The dashboard provides a centralized overview of the business's financial condition.
+The dashboard provides a centralized overview of the business's financial condition, bringing key financial information together for quick monitoring and decision-making.
 
-The dashboard is designed to bring important financial information together so that users can quickly understand the current state of their business.
-
-It acts as the main entry point for financial monitoring and decision-making.
-
----
-
-# ❤️ Financial Health
-
-The Financial Health module evaluates the overall financial condition of the business.
-
-It is designed to help users understand:
-
-* Current financial condition
-* Financial stability
-* Important financial indicators
-* Potential financial concerns
-* Overall financial health
-
-The purpose of this module is to convert financial data into a more understandable representation of business health.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/809ae23d-cb72-4443-a3ca-2c0af3be03b5" width="280" alt="Financial Dashboard"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/9ccc2011-7dd2-4d1b-a7b6-bd802d07ec58" width="280" alt="Recent Transactions"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>Dashboard Overview</b></td>
+      <td align="center"><b>Recent Transactions</b></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
-# 💸 Transaction Management
+## 💸 Transaction Management
 
-FinoraTwin includes transaction management for recording and analyzing business financial activity.
+Track and manage business revenue and expenses with a simple transaction workflow.
 
-Transactions form an important part of the platform because other financial intelligence features can use transaction data for analysis.
-
-The transaction workflow includes:
-
-```text
-Transaction Data
-       ↓
-Persistent Storage
-       ↓
-Financial Processing
-       ↓
-Financial Analysis
-       ↓
-Insights
-```
-
----
-
-# 💰 Cash Pressure Analysis
-
-The Cash Pressure module focuses on identifying situations where the business may experience financial pressure due to cash availability and financial obligations.
-
-The feature is designed to help users understand:
-
-* Cash availability
-* Financial pressure
-* Potential liquidity concerns
-* Business cash position
-* Areas requiring attention
-
-This provides a more decision-oriented view than simply displaying account balances.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/d6c33ad7-fd0e-4d13-b2c8-fdc3445ceb5c" width="250" alt="Transactions"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/72f6600b-ed2c-465b-bc56-1386b6e88799" width="250" alt="Add Revenue"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/2f205511-a3d1-4ed9-befc-d03c2fa77024" width="250" alt="Add Expense"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>Transactions</b></td>
+      <td align="center"><b>Add Revenue</b></td>
+      <td align="center"><b>Add Expense</b></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
-# 🔎 Financial Leak Detector
+## 💰 Cash Pressure Analysis
 
-The Leak Detector is designed to identify potential areas where money may be unnecessarily leaving the business.
+The Cash Pressure module helps users understand cash availability, financial pressure, and potential liquidity risks.
 
-The system can analyze financial activity and highlight potential financial leaks or problematic spending patterns.
+It analyzes the business's cash position and financial obligations to highlight areas that may require attention.
 
-The general workflow is:
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/dadb4420-f14a-4edd-ab70-b4a4e213a242" width="250" alt="Cash Pressure Analysis"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/6f41e1ab-755f-4028-8273-bcfb0f33162c" width="250" alt="Cash Pressure Overview"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/fed6cdb6-e338-4115-b187-90c062e16fd5" width="250" alt="Cash Pressure Details"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>Cash Pressure</b></td>
+      <td align="center"><b>Financial Overview</b></td>
+      <td align="center"><b>Pressure Details</b></td>
+    </tr>
+  </table>
+</div>
+---
 
-```text
-Financial Transactions
-        ↓
-Pattern Analysis
-        ↓
-Potential Leak Detection
-        ↓
-Risk Signal
-        ↓
-User Insight
-```
+## 🔎 Financial Leak Detector
 
-This helps business owners investigate areas that may negatively affect profitability or cash flow.
+The Leak Detector helps identify unusual spending patterns and potential areas where money may be unnecessarily leaving the business.
+
+It analyzes financial activity to highlight possible leaks that could affect profitability or cash flow.
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/c1bc5703-eb52-4de4-b37e-a195d4183f53" width="250" alt="Financial Tools"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/a4280a7d-cf3e-401e-ad8f-abfeabe9102f" width="250" alt="Leak Detector"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>Financial Tools</b></td>
+      <td align="center"><b>Leak Detector</b></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
@@ -329,54 +356,68 @@ Goal Achievement
 
 ---
 
-# 🤖 AI Financial Copilot
+## 🤖 AI Financial Copilot
 
-The AI Copilot is one of the core intelligence components of FinoraTwin.
+FinoraTwin's AI Copilot uses live business data to answer financial questions, explain financial situations, and support better financial decisions.
 
-It is designed to provide users with AI-assisted financial explanations, insights, and decision support based on the available financial context.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/ee7c33f1-0ed7-430c-92fb-165b39ce443e" width="250" alt="AI Copilot"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/cada1348-3820-4b15-82b7-b744bba5f9d4" width="250" alt="AI Loan Analysis"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/c9249af8-5dda-4b11-b503-f2a78c56228d" width="250" alt="AI Financial Analysis"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>AI Copilot</b></td>
+      <td align="center"><b>Loan Analysis</b></td>
+      <td align="center"><b>Financial Analysis</b></td>
+    </tr>
+  </table>
+</div>
 
-The AI workflow is designed around:
+The Copilot analyzes financial data such as income, expenses, cash flow, and cash reserves to generate context-aware responses instead of generic chatbot answers.
 
-```text
-Business Financial Data
-          ↓
-Financial Context
-          ↓
-AI Processing
-          ↓
-Financial Explanation
-          ↓
-Recommendation
-          ↓
-User Decision
-```
+### AI Architecture
 
-The purpose of the AI Copilot is not simply to provide generic chatbot responses.
+FinoraTwin uses the **Groq API** to connect the AI Copilot with an LLM for generating context-aware financial responses.
 
-It is intended to act as a financial assistant that understands the user's business context and helps explain financial situations in a more accessible way.
+The user's question is combined with relevant business financial data to create a financial context. This context is sent through the Groq API to the LLM, which generates an explanation, analysis, or decision-support response.
 
----
+**Business Data → Financial Context → Groq API → LLM → Financial Insight**
 
-# 📄 Document & Financial Data Support
+The AI Copilot can assist with questions related to financial health, expenses, cash flow, loan affordability, and future financial decisions.
 
-The backend includes document and document-chunk entities that provide a foundation for handling structured financial documents and their associated content.
-
-This architecture can support financial information processing where larger documents or business records need to be represented and processed in smaller logical units.
-
-```text
-Financial Document
-       ↓
-Document Processing
-       ↓
-Document Chunks
-       ↓
-Financial Context
-       ↓
-AI / Analysis
-```
+**Financial Data → AI Analysis → Clear Explanation → Decision Support**
 
 ---
+## 🛠️ Admin Dashboard
 
+The Admin Dashboard provides a real-time overview of the FinoraTwin platform and allows administrators to manage users and monitor platform activity.
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/2031ec93-180e-4682-8c6e-30e679870be7" width="250" alt="Admin Dashboard"/>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/810437b2-b0a4-4d52-b172-7341f004c39d" width="250" alt="User Management"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center"><b>Platform Overview</b></td>
+      <td align="center"><b>User Management</b></td>
+    </tr>
+  </table>
+</div>
+
+---
 # 💡 Recommendations
 
 FinoraTwin includes a recommendation layer for storing and presenting financial recommendations generated from financial analysis.

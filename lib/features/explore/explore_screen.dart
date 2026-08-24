@@ -29,21 +29,16 @@ class ExploreScreen extends StatelessWidget {
                 FinoraSpacing.xl,
               ),
               sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final group = groups[index];
-                    return Padding(
-                      padding: EdgeInsets.only(
-                        bottom: index == groups.length - 1
-                            ? 0
-                            : FinoraSpacing.lg,
-                        top: index == 0 ? 0 : 0,
-                      ),
-                      child: _GroupSection(group: group),
-                    );
-                  },
-                  childCount: groups.length,
-                ),
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final group = groups[index];
+                  return Padding(
+                    padding: EdgeInsets.only(
+                      bottom: index == groups.length - 1 ? 0 : FinoraSpacing.lg,
+                      top: index == 0 ? 0 : 0,
+                    ),
+                    child: _GroupSection(group: group),
+                  );
+                }, childCount: groups.length),
               ),
             ),
           ],
@@ -52,19 +47,11 @@ class ExploreScreen extends StatelessWidget {
     );
   }
 
-
-List<_ExploreGroup> _groupsFor(BuildContext context) {
+  List<_ExploreGroup> _groupsFor(BuildContext context) {
     return const [
       _ExploreGroup(
         title: 'Financial Health',
         items: [
-          _ExploreItem(
-            icon: Icons.favorite_rounded,
-            tone: FinoraBadgeTone.positive,
-            title: 'Financial Health',
-            subtitle: 'Understand your overall financial position.',
-            route: '/financial-health',
-          ),
           _ExploreItem(
             icon: Icons.water_drop_outlined,
             tone: FinoraBadgeTone.warning,
@@ -146,6 +133,7 @@ List<_ExploreGroup> _groupsFor(BuildContext context) {
     ];
   }
 }
+
 class _ExploreGroup {
   const _ExploreGroup({required this.title, required this.items});
 
@@ -267,10 +255,7 @@ class _ExploreRow extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      item.title,
-                      style: FinoraTextStyles.h4,
-                    ),
+                    Text(item.title, style: FinoraTextStyles.h4),
                     const SizedBox(height: FinoraSpacing.xxs),
                     Text(
                       item.subtitle,

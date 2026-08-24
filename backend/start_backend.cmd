@@ -42,12 +42,14 @@ echo   [start] launching FinoraTwin.Api on port %PORT%...
 echo   [start] logs: %LOG%
 start "FinoraBackend" /MIN cmd /c "cd /d %PROJ% && dotnet run --launch-profile http >> %LOG% 2>&1"
 
-REM ---- 4. Wait using a TCP probe (not a log grep) ----
+REM ---- 4. Wait using an HTTP probe (not a log grep) ----
 set "READY=0"
 for /l %%I in (1,1,60) do (
     timeout /t 1 /nobreak >nul
-    powershell -NoProfile -Command "$t = New-Object System.Net.Sockets.TcpClient; try { $t.BeginConnect('127.0.0.1', %PORT%, $null, $null) | Out-Null; if ($t.ConnectAsync(127.0.0.1, %PORT%).Wait(500)) { exit 0 } else { exit 1 } } catch { exit 1 }" >nul 2>&1
-    if not errorlevel 1 (
+    curl.exe -s --connect-timeout 1 -o NUL http://127.0.0.1:%PORT%/swagger/index.html >nul 2>&1
+    if errorlevel 1 (
+        rem Keep waiting while the API is starting.
+    ) else (
         set "READY=1"
         goto :ready
     )
@@ -55,7 +57,7 @@ for /l %%I in (1,1,60) do (
 goto :notready
 
 :ready
-echo   [ok] TCP listener on 127.0.0.1:%PORT% is UP.
+echo   [ok] HTTP endpoint on 127.0.0.1:%PORT% is UP.
 echo   [verify] HTTP probe
 curl.exe -s -o NUL -w "   swagger_http=%%{http_code}\n" http://localhost:%PORT%/swagger/index.html
 echo.

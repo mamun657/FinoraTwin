@@ -14,6 +14,16 @@
 
 ---
 
+## 📥 Download App
+
+<a href="https://github.com/mamun657/FinoraTwin/releases/download/v1.0.0/FinoraTwin.apk">
+  <img src="https://img.shields.io/badge/Download%20APK-FinoraTwin-green?style=for-the-badge&logo=android" alt="Download FinoraTwin APK">
+</a>
+
+**Latest Android APK:** [Download FinoraTwin](https://github.com/mamun657/FinoraTwin/releases/download/v1.0.0/FinoraTwin.apk)
+
+---
+
 ## 📌 Project Overview
 
 FinoraTwin is an AI-powered financial decision platform designed to help small businesses understand their financial condition, identify financial risks, simulate business decisions, and receive actionable recommendations from their financial data.

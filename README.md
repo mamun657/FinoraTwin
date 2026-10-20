@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/Download%20APK-FinoraTwin-green?style=for-the-badge&logo=android" alt="Download FinoraTwin APK">
 </a>
 
-**Latest Android APK:** [Download FinoraTwin](https://github.com/mamun657/FinoraTwin/releases/download/v1.0.0/FinoraTwin.apk)
+**Download Android APK:** [Download FinoraTwin](https://github.com/mamun657/FinoraTwin/releases/download/v1.0.0/FinoraTwin.apk)
 
 ---
 
